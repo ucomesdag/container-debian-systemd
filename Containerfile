@@ -1,9 +1,10 @@
-FROM debian:bookworm
+FROM debian:bullseye
 
 ARG BUILD_DATE
 
+LABEL summary="Debian Systemd Container Image."
 LABEL maintainer="Uco Mesdag <uco@mesd.ag>"
-LABEL build_date=${BUILD_DATE}
+LABEL build-date=${BUILD_DATE}
 
 ENV container=podman
 ENV DEBIAN_FRONTEND=noninteractive
