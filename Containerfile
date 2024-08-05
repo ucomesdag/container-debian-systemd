@@ -1,15 +1,16 @@
-FROM debian:bullseye
+FROM debian:bookworm
 
 ARG BUILD_DATE
 
+LABEL summary="Debian Systemd Container Image."
 LABEL maintainer="Uco Mesdag <uco@mesd.ag>"
-LABEL build_date=${BUILD_DATE}
+LABEL build-date=${BUILD_DATE}
 
 ENV container=podman
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Enable systemd and install required packages.
-RUN apt-get update && apt-get install -y systemd python3 sudo && apt-get clean; \
+RUN apt-get update && apt-get install -y systemd sudo python3 && apt-get clean; \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* ; \
     rm -rf /lib/systemd/system/multi-user.target.wants/* ; \
     rm -rf /etc/systemd/system/*.wants/* ; \
