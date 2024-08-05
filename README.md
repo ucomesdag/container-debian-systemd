@@ -30,7 +30,7 @@ podman run \
   --tty \
   --privileged \
   --volume /sys/fs/cgroup:/sys/fs/cgroup:ro \
-  quay.io/ucomesdag/debian:latest
+  quay.io/ucomesdag/debian:bullseye
 ```
 
 <!-- container image -->
