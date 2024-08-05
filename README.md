@@ -12,8 +12,10 @@ This repository has multiple branches that relate to Debian versions.
 
 |Branch  |Debian Version    |Container image tag|
 |--------|------------------|-------------------|
+|trixie  |trixie (13)       |trixie             |
+|main    |bookworm (12)     |latest             |
+|bullseye|bullseye (11)     |bullseye           |
 |buster  |buster (10)       |buster             |
-|main    |bullseye (11)     |latest             |
 
 Pull strategy
 -------------
@@ -28,7 +30,7 @@ podman run \
   --tty \
   --privileged \
   --volume /sys/fs/cgroup:/sys/fs/cgroup:ro \
-  quay.io/ucomesdag/debian
+  quay.io/ucomesdag/debian:buster
 ```
 
 <!-- container image -->
